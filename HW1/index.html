@@ -204,7 +204,7 @@
 
             // count characters each string
             for (var index = 0; index < len; index++) {
-                var char = str.charAt(index).toLowerCase();
+                var char = str.charAt(index);
                 var cnt = object[char];
                 object[char] = cnt ? cnt + 1 : 1;
             }
