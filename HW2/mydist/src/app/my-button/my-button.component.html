@@ -1,1 +1,10 @@
-<button class="btn btn-outline-success liked">Like</button>
+<span *ngIf="like == true; else whiteButton;">
+<button class="btn isliked" (click)="onClickLike()" [ngClass]="{'btn-success':true}">Like</button>
+</span>
+<ng-template #whiteButton>
+  <button class="btn isliked" (click)="onClickLike()" [ngClass]="{'btn-outline-dark':true}">Like</button>
+</ng-template>
+
+<div class="small text-like">
+  <span id="text-output"></span>
+</div>
