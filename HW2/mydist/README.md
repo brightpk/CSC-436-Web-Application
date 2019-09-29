@@ -1,27 +1,24 @@
-# Mydist
+# HW1: Mydist
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
+## Github full url to the source code
 
-## Development server
+https://github.com/brightpk/CSC-436-Web-Application/tree/master/HW2/mydist
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Road blocks and challenges
 
-## Code scaffolding
+The homework 2 is completed. The challenge would be that I had to spend sometime to debug the code on displaying the text. The program seemed to assign all previous messages in the array to the new text. However, the problem is solved and it displays all the messages in array (including a new message).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instructions
 
-## Build
+1. Download the code 
+2. Open terminal 
+3. type -> cd <path to myDist project>
+4. type -> npm start or ng serve  
+5. Click the like button and it will turn green and display 'Image is liked == true' next to the button 
+6. Like again, it will toggle to the default button color and display 'Image is liked == false'   
+7. Type some message inside the input field on the bottom of the page
+8. Click "send" and it will display your message below the image and the like button
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Estimate of time spent on homework
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+10 hours
