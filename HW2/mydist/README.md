@@ -1,4 +1,4 @@
-# HW1: Mydist
+# HW2: Mydist (Angular CLI)
 
 ## Github full url to the source code
 
