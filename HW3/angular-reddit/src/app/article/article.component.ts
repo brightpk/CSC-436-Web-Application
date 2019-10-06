@@ -5,6 +5,7 @@ import {
   HostBinding
 } from '@angular/core';
 import { Article } from './article.model'; // <-- added
+import { ArticlesService } from '../articles.service';
 
 @Component({
   selector: 'app-article',
@@ -15,7 +16,7 @@ export class ArticleComponent implements OnInit {
   @HostBinding('attr.class') cssClass = 'row';
   @Input() article: Article;
 
-  constructor() {
+  constructor(private articlesService: ArticlesService) {
     // article is populated by the Input now,
     // so we don't need anything here
   }
@@ -31,6 +32,12 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  flagArticle(article): boolean {
+    console.log('flag a problematic: ' + article.title);
+    this.articlesService.removeAllPoints(article);
+    return false;
   }
 
 }

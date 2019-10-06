@@ -26,5 +26,13 @@
         downvote
       </a>
     </li>
+
+    <!-- show flag button if it's admin -->
+    <li class="item flag-item" *ngIf="article.role == 'admin'"> 
+      <a class="flag-text" href (click)="flagArticle(this.article)">
+        <i class="fa fa-flag flag-icon"></i>
+        flag
+      </a>
+    </li>
   </ul>
 </div>

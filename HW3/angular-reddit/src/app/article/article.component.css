@@ -1,0 +1,7 @@
+a.flag-text, a.flag-icon {
+  color: #e75858;
+}
+
+.flag-text:hover, .flag-icon:hover {
+  color: red;
+}
