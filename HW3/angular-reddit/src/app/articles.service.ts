@@ -5,10 +5,18 @@ import { Article } from './article/article.model';
   providedIn: 'root'
 })
 export class ArticlesService {
+  articles: Article[];
 
-  constructor() { }
+  constructor() {}
 
   removeAllPoints(article: Article) {
-    article.votes = 0;
+    let res = 0;
+    const votes: number[] = [];
+    this.articles.forEach((a => votes.push(a.votes)));
+    res = Math.min.apply(null, votes);
+
+    if (article.votes > res) {
+      article.votes = res - 1;
+    }
   }
 }

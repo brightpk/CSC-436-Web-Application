@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Article } from './article/article.model';
+import { ArticlesService } from './articles.service';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +11,13 @@ export class AppComponent {
   title = 'angular-reddit';
   articles: Article[];
 
-  constructor() {
+  constructor(private articlesService: ArticlesService) {
     this.articles = [
       new Article('Angular', 'http://angular.io', 3, 'admin'),
       new Article('Fullstack', 'http://fullstack.io', 2, 'admin'),
       new Article('Angular Homepage', 'http://angular.io', 1, 'user')
     ];
+    this.articlesService.articles = this.articles;
   }
 
   addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {
