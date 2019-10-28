@@ -1,0 +1,14 @@
+.urgent {
+  background-color: #ffc107;
+  color: white;
+}
+
+.days {
+  background-color: #007bff;
+  color: white;
+}
+
+.week {
+  background-color: #17a2b8;
+  color: white;
+}

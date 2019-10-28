@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Todo } from '../todo.model';
+import { TodosService } from '../todos.service';
 
 @Component({
   selector: 'app-todo-item',
@@ -6,10 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-item.component.css']
 })
 export class TodoItemComponent implements OnInit {
+  @Input() todoList: Todo[];
+  isChosen: boolean;
 
-  constructor() { }
+  constructor(private todosService: TodosService) { }
 
   ngOnInit() {
+  }
+
+  updateTodo(event, todo) {
+    const due = event.target.value;
+    this.todosService.updateTodo(todo.key, {dueDate: due})
+    .catch(err => console.log(err));
+
+  }
+
+  deleteTodo(todo) {
+    this.todosService.deleteTodo(todo.key)
+    .catch(err => console.log(err));
+
   }
 
 }

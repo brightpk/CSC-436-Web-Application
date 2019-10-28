@@ -1,1 +1,34 @@
-<p>todo-item works!</p>
+<table class="table table-hover">
+  <tr>
+    <th>#</th>
+    <th>Task</th>
+    <th>Due Date</th>
+    <th>Delete</th>
+  </tr>
+
+  <tr *ngFor="let todo of todoList; let i = index" [attr.data-index]="i">
+    <td>{{i + 1}}</td>
+    <td>{{todo.description}}</td>
+    <td (click)="updateTodo($event, todo)">
+      <button class="btn btn-outline-warning mr-2" [ngClass]="{'urgent': todo.dueDate == 'urgent'}" value="urgent">
+        <i class="fa fa-exclamation-circle"></i>
+        Urgent
+      </button>
+
+      <button class="btn btn-outline-primary mr-2" [ngClass]="{'days': todo.dueDate == 'days'}" value="days">
+        <i class="fa fa-calendar-o"></i>
+        Days
+      </button>
+
+      <button class="btn btn-outline-info" [ngClass]="{'week': todo.dueDate == 'week'}" value="week">
+        <i class="fa fa-calendar"></i>
+        Week
+      </button>
+    </td>
+    <td>
+      <button class="btn btn-danger" (click)="deleteTodo(todo)">
+        <i class="fa fa-remove"></i>
+      </button>
+    </td>
+  </tr>
+</table>
