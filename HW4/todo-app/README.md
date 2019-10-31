@@ -7,7 +7,7 @@ https://github.com/brightpk/CSC-436-Web-Application/tree/master/HW4/todo-app
 ## Road blocks and challenges
 
 The homework 4 is completed. I did connect to the firebase realtime database. So everytime you come back to the project, the tasks will be there. 
-Did the both extra credit: One is a function that delete task and another one is another dist file which is under folder "extraCredit1"
+Did the both extra credit: One is a function that delete task and another one is another dist file which is called "dist-extracredit1"
 
 ## Instructions
 
