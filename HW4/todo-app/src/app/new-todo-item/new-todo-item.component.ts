@@ -17,7 +17,9 @@ export class NewTodoItemComponent implements OnInit {
   }
 
   submit() {
+    this.newTodo.dueDate = 'days';
     this.todosService.addTodo(this.newTodo);
+    this.newTodo = new Todo();
   }
 
 }

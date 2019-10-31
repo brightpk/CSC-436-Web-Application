@@ -9,7 +9,6 @@ import { TodosService } from '../todos.service';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todoList: Todo[];
-  isChosen: boolean;
 
   constructor(private todosService: TodosService) { }
 
