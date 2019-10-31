@@ -2,7 +2,7 @@
 
 ## Github full url to the source code
 
-https://github.com/brightpk/CSC-436-Web-Application/tree/master/HW3/angular-reddit
+https://github.com/brightpk/CSC-436-Web-Application/tree/master/HW4/todo-app
 
 ## Road blocks and challenges
 
