@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid" style="margin-bottom: 13px;">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/logos/ng-book-2-minibook.png" />
+        ng-book 2
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" class="login-form col-sm-4 col-sm-offset-4">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h2 class="panel-title">Login</h2>
+    </div>
+    <div class="panel-body">
+      <!-- value: {{loginForm.valid | json }} -->
+      <div class="form-group">
+        <label class="control-label" for="username">
+          <h5>Username</h5>
+        </label>
+        <input class="form-control col-sm-4" type="text" placeholder="username@gmail.com" formControlName="username">
+      </div>
+      <div class="form-group mb-2">
+        <label class="control-label" for="username">
+          <h5>Password</h5>
+        </label>
+        <input class="form-control col-sm-4" type="text" placeholder="password"
+          [formControl]="loginForm.controls['password']">
+      </div>
+      <div class="login-button">
+        <button class="btn btn-info" style="width: 395px;" type="submit">Log in</button>
+      </div>
+
+    </div>
+  </div>
+</form>
