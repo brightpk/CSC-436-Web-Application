@@ -24,6 +24,10 @@ export class LoginComponent implements OnInit {
     this.userLogin = new UserLogin();
     this.message = '';
     // this.loginForm.valueChanges.subscribe(console.log);
+    if (this.authService.isLoggedIn()) {
+      console.log(this.router.isActive);
+      this.router.navigate(['/chatpage']);
+    }
   }
 
   login() {
