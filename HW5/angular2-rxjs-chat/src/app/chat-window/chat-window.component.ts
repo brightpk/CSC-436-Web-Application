@@ -25,6 +25,7 @@ export class ChatWindowComponent implements OnInit {
   currentThread: Thread;
   draftMessage: Message;
   currentUser: User;
+  chatBox = true;
 
   constructor(public messagesService: MessagesService,
               public threadsService: ThreadsService,

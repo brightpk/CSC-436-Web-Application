@@ -6,7 +6,10 @@
          ng-book 2
       </a>
     </div>
-    <p class="navbar-text navbar-right">
+    <p class="navbar-text navbar-right" *ngIf="authService.getUser()" style="padding-right: 50px;"> 
+        <button class="btn btn-success" (click)="logout()">Log out</button>
+    </p>
+    <p class="navbar-text navbar-right" style="padding-right: 10px;">
       <button class="btn btn-primary" type="button">
         Messages <span class="badge">{{ unreadMessagesCount }}</span>
       </button>

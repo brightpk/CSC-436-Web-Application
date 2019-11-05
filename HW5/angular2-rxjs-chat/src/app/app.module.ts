@@ -1,3 +1,5 @@
+import { AuthGuard } from './auth-guard/auth.guard';
+import { AuthService } from 'app/auth-userlogin/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -46,7 +48,9 @@ import { environment } from 'environments/environment';
    providers: [
       MessagesService,
       ThreadsService,
-      UsersService
+      UsersService,
+      AuthService,
+      AuthGuard
    ],
    bootstrap: [
       AppComponent

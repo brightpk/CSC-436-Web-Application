@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { AuthService } from './../auth-userlogin/auth.service';
 import {
   Component,
   Inject,
@@ -21,7 +23,9 @@ export class ChatNavBarComponent implements OnInit {
   unreadMessagesCount: number;
 
   constructor(public messagesService: MessagesService,
-              public threadsService: ThreadsService) {
+              public threadsService: ThreadsService,
+              private authService: AuthService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -49,5 +53,10 @@ export class ChatNavBarComponent implements OnInit {
             },
             0);
       });
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }
