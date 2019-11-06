@@ -1,63 +1,63 @@
-import { UserLogin } from '../models/userlogin.model';
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
-import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs/internal/Observable';
+
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
+
+
+interface User {
+  uid: string;
+  email: string;
+  photoURL?: string;
+  displayName?: string;
+  favoriteColor?: string;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private dbPath = 'userLogin';
-  private userLoginList: UserLogin[];
-  userLoginDatabase: AngularFireList<UserLogin>;
+  user: Observable<User>;
+  message = '';
 
-  constructor(private db: AngularFireDatabase) {
-    this.userLoginDatabase = db.list(this.dbPath);
-    this.getUseLoginList();
+  constructor(
+    private firebaseAuth: AngularFireAuth,
+    private router: Router
+  ) {
+    this.user = firebaseAuth.authState;
   }
 
-  addNewUserLogin(newUserLogin: UserLogin): void {
-    this.userLoginDatabase.push(newUserLogin);
-  }
-
-  login(userLogin: UserLogin): boolean {
-    let existedUser = false
-    this.userLoginList.forEach(data => {
-      if (data.username === userLogin.username && data.password === userLogin.password) {
+    login(username: string, password: string) {
+      this.firebaseAuth.auth
+      .signInWithEmailAndPassword(username, password)
+      .then(value => {
         localStorage.setItem('username', 'user');
-        existedUser = true;
-      } else {
-        existedUser = false;
-      }
-    });
-    return existedUser;
-  }
+        this.message = '';
+        console.log('Nice, it worked!', value);
+        this.router.navigate(['/chatpage']);
+      })
+      .catch(err => {
+        this.message = 'Incorrect username and password';
+        console.log('Something went wrong:', err.message);
+      });
+    }
 
-  logout(): void {
-    localStorage.removeItem('username');
-  }
+    logout() {
+      this.firebaseAuth.auth.signOut()
+      .then(() => {
+        localStorage.removeItem('username');
+        this.router.navigate(['/login']);
+        console.log('Signed out successed');
+      });
+    }
 
-  getUser(): any {
-    console.log(localStorage.getItem('username'));
-    return localStorage.getItem('username');
-  }
+    getUser(): any {
+      console.log(localStorage.getItem('username'));
+      return localStorage.getItem('username');
+    }
 
-  isLoggedIn(): boolean {
-    return !!this.getUser();
-  }
-
-  getUseLoginList() {
-    this.userLoginDatabase.snapshotChanges()
-    .pipe(map(changes =>
-        changes.map(c =>
-          ({ key: c.payload.key, ...c.payload.val()})
-        )
-      )
-    ).subscribe(login => {
-      this.userLoginList = login;
-    });
-  }
-
-
+    isLoggedIn(): boolean {
+      return !!this.getUser();
+    }
 
 }

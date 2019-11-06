@@ -24,6 +24,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'environments/environment';
 
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 @NgModule({
    declarations: [
       AppComponent,
@@ -43,7 +46,9 @@ import { environment } from 'environments/environment';
       HttpClientModule,
       ReactiveFormsModule,
       AngularFireModule.initializeApp(environment.firebase),
-      AngularFireDatabaseModule
+      AngularFireAuthModule,
+      AngularFireDatabaseModule,
+      AngularFirestoreModule
    ],
    providers: [
       MessagesService,
