@@ -7,7 +7,7 @@
       </a>
     </div>
     <p class="navbar-text navbar-right" *ngIf="authService.isLoggedIn()" style="padding-right: 50px;"> 
-        <button class="btn btn-success" (click)="logout()">Log out</button>
+      <app-logout></app-logout>
     </p>
     <p class="navbar-text navbar-right" style="padding-right: 10px;">
       <button class="btn btn-primary" type="button">

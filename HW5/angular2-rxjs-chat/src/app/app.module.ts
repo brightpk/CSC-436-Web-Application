@@ -26,6 +26,7 @@ import { environment } from 'environments/environment';
 
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
    declarations: [
@@ -37,7 +38,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
       ChatWindowComponent,
       ChatPageComponent,
       FromNowPipe,
-      LoginComponent
+      LoginComponent,
+      LogoutComponent
    ],
    imports: [
       AppRoutingModule,
