@@ -6,7 +6,7 @@ https://github.com/brightpk/CSC-436-Web-Application/tree/master/HW5/angular2-rxj
 
 ## Road blocks and challenges
 
-The homework 5 is completed. The most challenge thing was how to get AuthGurad and irebase authentication work. It didn't seem to work first but it was because no users are in firebase authentication.
+The homework 5 is completed. The most challenge thing was how to get AuthGurad and firebase authentication work. It didn't seem to work first but it was because no users are in firebase authentication.
 Did one extra credit: logout button when you are on chatpage
 
 ## Instructions
