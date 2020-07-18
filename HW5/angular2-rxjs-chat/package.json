@@ -24,7 +24,7 @@
     "@types/lodash": "4.14.144",
     "core-js": "^2.6.10",
     "firebase": "^7.2.3",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "moment": "2.24.0",
     "redux": "4.0.4",
     "reflect-metadata": "0.1.13",
